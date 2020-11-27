@@ -1,4 +1,11 @@
 void main() {
+  // Lair v2
+  LairV2<Goblin> lairGoblin = LairV2();
+  LairV2<Hobogoblin> lairHobogoblin = LairV2();
+  // LairV2<Orc> lairOrc = LairV2();
+  // Error: Type argument 'Orc' doesn't conform to the bound 'Goblin' of the type variable 'T' on 'LairV2'.
+
+  // Lair v1
   Lair lair = Lair();
 
   lair.Spawn(Goblin());
@@ -15,6 +22,10 @@ class Goblin {}
 class Hobogoblin extends Goblin {}
 
 class Orc {}
+
+class LairV2<T extends Goblin> {
+  T entity;
+}
 
 class Lair<T extends Goblin> {
   List<T> listEntity = [];
