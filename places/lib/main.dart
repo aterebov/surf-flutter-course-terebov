@@ -1,7 +1,17 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(App());
+}
+
+class App extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'App title',
+      home: MyFirstStatefulWidget(),
+    );
+  }
 }
 
 class MyApp extends StatelessWidget {
@@ -129,6 +139,9 @@ class MyFirstWidget extends StatelessWidget {
       ),
     );
   }
+
+  // Ошибка: The getter 'context' isn't defined for the class 'MyFirstWidget'
+  // Type getContextRuntimeType() => context.runtimeType;
 }
 
 class MyFirstStatefulWidget extends StatefulWidget {
@@ -148,4 +161,7 @@ class _MyFirstStatefulWidgetState extends State<MyFirstStatefulWidget> {
       ),
     );
   }
+
+  // Работает, т.к. в классе State есть геттер для context
+  Type getContextRuntimeType() => context.runtimeType;
 }
