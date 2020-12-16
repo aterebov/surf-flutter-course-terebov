@@ -15,7 +15,7 @@ class _SightListScreenState extends State<SightListScreen> {
             style: TextStyle(
               fontFamily: 'roboto',
               fontStyle: FontStyle.normal,
-              color: Colors.black,
+              color: Color(0xFF3B3E5B),
               fontSize: 32,
               fontWeight: FontWeight.w700,
             ),
