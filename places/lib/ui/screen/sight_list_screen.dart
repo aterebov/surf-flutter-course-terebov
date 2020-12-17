@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:places/ui/res/text_styles.dart';
+import 'package:places/ui/res/strings.dart';
 
 class SightListScreen extends StatefulWidget {
   @override
@@ -11,14 +13,8 @@ class _SightListScreenState extends State<SightListScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Список\nинтересных мест',
-          style: TextStyle(
-            fontFamily: 'roboto',
-            fontStyle: FontStyle.normal,
-            color: Color(0xFF3B3E5B),
-            fontSize: 32,
-            fontWeight: FontWeight.w700,
-          ),
+          appBarText,
+          style: textBold32,
         ),
         backgroundColor: Colors.transparent,
         shadowColor: Colors.transparent,
