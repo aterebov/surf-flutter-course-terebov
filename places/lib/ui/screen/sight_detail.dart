@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:places/domain/sight.dart';
+import 'package:places/ui/res/colors.dart';
 import 'package:places/ui/res/text_styles.dart';
 
 class SightDetail extends StatelessWidget {
@@ -45,7 +46,7 @@ class SightDetail extends StatelessWidget {
                         children: [
                           Text(
                             sight.name,
-                            style: textSightDetailName,
+                            style: textBold24,
                           ),
                           Container(
                             height: 2,
@@ -54,14 +55,14 @@ class SightDetail extends StatelessWidget {
                             children: [
                               Text(
                                 sight.type,
-                                style: textSightDetailType,
+                                style: textBold14,
                               ),
                               Container(width: 16),
                               // Заглушка - пока непонятно как получать эти данные - может дальше будет в курсе
                               // временно - поэтому не унесено в текстовые константы
                               Text(
                                 "Закрыто до 9:00",
-                                style: textSightDetailWorktime,
+                                style: textRegular14SlateGrey,
                               ),
                             ],
                           ),
@@ -72,7 +73,7 @@ class SightDetail extends StatelessWidget {
                       margin: const EdgeInsets.only(top: 24.0),
                       child: Text(
                         sight.detail,
-                        style: textSightDetailDetail,
+                        style: textRegular14,
                       ),
                     ),
                     Container(
@@ -82,7 +83,7 @@ class SightDetail extends StatelessWidget {
                     Container(
                       height: 1,
                       margin: const EdgeInsets.only(top: 24.0),
-                      color: Color(0xFF7C7E92),
+                      color: dividerColor,
                     ),
                     Container(
                       height: 48,

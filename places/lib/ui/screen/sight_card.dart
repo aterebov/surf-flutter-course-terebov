@@ -27,7 +27,7 @@ class SightCard extends StatelessWidget {
                       top: 16,
                       child: Text(
                         sight.type,
-                        style: textSightCardType,
+                        style: textBold14White,
                       ),
                     ),
                     Positioned(
@@ -53,13 +53,13 @@ class SightCard extends StatelessWidget {
                   children: [
                     Text(
                       sight.name,
-                      style: textSightCardName,
+                      style: textMedium16,
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                     ),
                     Text(
                       sight.detail,
-                      style: textSightCardDetail,
+                      style: textRegular14SlateGrey,
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                     ),
