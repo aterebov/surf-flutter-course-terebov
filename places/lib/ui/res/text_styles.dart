@@ -1,11 +1,27 @@
 import 'package:flutter/painting.dart';
+import 'package:places/ui/res/colors.dart';
 
 /// Стили текстов
 TextStyle _text = const TextStyle(
       fontStyle: FontStyle.normal,
-      color: Color(0xFF3B3E5B),
+      color: textColorPrimary,
     ),
 
-//Bold
-    textBold = _text.copyWith(fontWeight: FontWeight.w700),
+//Light
+    textLight = _text.copyWith(fontWeight: FontWeight.w300),
+
+//Regular (w400)
+    textRegular = _text.copyWith(fontWeight: FontWeight.normal),
+    textRegular14 = textRegular.copyWith(fontSize: 14.0, height: 18.0 / 14.0),
+    textRegular14SlateGrey = textRegular14.copyWith(color: textColorSlateGrey),
+
+//Medium
+    textMedium = _text.copyWith(fontWeight: FontWeight.w500),
+    textMedium16 = textMedium.copyWith(fontSize: 16.0, height: 20.0 / 16.0),
+
+//Bold (w700)
+    textBold = _text.copyWith(fontWeight: FontWeight.bold),
+    textBold14 = textBold.copyWith(fontSize: 14.0, height: 18.0 / 14.0),
+    textBold14White = textBold14.copyWith(color: textColorWhite),
+    textBold24 = textBold.copyWith(fontSize: 24.0, height: 28.8 / 24.0),
     textBold32 = textBold.copyWith(fontSize: 32.0);
