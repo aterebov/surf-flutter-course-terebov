@@ -30,6 +30,7 @@ class _SightListScreenState extends State<SightListScreen> {
   }
 }
 
+// Специфичный AppBar
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final double height;
 
