@@ -21,9 +21,25 @@ class SightCard extends StatelessWidget {
               Expanded(
                 flex: 96,
                 child: Container(
-                  color: Colors.lightBlueAccent[100],
                   child: Stack(
                     children: [
+                      Image.network(
+                        sight.url,
+                        width: double.infinity,
+                        fit: BoxFit.cover,
+                        loadingBuilder: (BuildContext context, Widget child,
+                            ImageChunkEvent loadingProgress) {
+                          if (loadingProgress == null) return child;
+                          return Center(
+                            child: CircularProgressIndicator(
+                              value: loadingProgress.expectedTotalBytes != null
+                                  ? loadingProgress.cumulativeBytesLoaded /
+                                      loadingProgress.expectedTotalBytes
+                                  : null,
+                            ),
+                          );
+                        },
+                      ),
                       Positioned(
                         left: 16,
                         top: 16,
