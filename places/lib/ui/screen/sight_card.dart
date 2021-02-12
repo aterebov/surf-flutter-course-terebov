@@ -67,13 +67,16 @@ class SightCard extends StatelessWidget {
                   padding: EdgeInsets.all(16),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       Text(
                         sight.name,
                         style: textMedium16,
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
+                      ),
+                      SizedBox(
+                        height: 2.0,
                       ),
                       Text(
                         sight.detail,
