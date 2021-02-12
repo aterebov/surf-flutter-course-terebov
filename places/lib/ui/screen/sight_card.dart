@@ -21,9 +21,25 @@ class SightCard extends StatelessWidget {
               Expanded(
                 flex: 96,
                 child: Container(
-                  color: Colors.lightBlueAccent[100],
                   child: Stack(
                     children: [
+                      Image.network(
+                        sight.url,
+                        width: double.infinity,
+                        fit: BoxFit.cover,
+                        loadingBuilder: (BuildContext context, Widget child,
+                            ImageChunkEvent loadingProgress) {
+                          if (loadingProgress == null) return child;
+                          return Center(
+                            child: CircularProgressIndicator(
+                              value: loadingProgress.expectedTotalBytes != null
+                                  ? loadingProgress.cumulativeBytesLoaded /
+                                      loadingProgress.expectedTotalBytes
+                                  : null,
+                            ),
+                          );
+                        },
+                      ),
                       Positioned(
                         left: 16,
                         top: 16,
@@ -51,13 +67,16 @@ class SightCard extends StatelessWidget {
                   padding: EdgeInsets.all(16),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       Text(
                         sight.name,
                         style: textMedium16,
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
+                      ),
+                      SizedBox(
+                        height: 2.0,
                       ),
                       Text(
                         sight.detail,
