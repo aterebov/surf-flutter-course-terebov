@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:places/domain/sight.dart';
 import 'package:places/ui/res/text_styles.dart';
 
+/// Карточка места
 class SightCard extends StatelessWidget {
   final Sight sight;
 
@@ -94,4 +95,14 @@ class SightCard extends StatelessWidget {
       ),
     );
   }
+}
+
+/// Карточка места, которое планируется посетить
+class SightCardToVizit extends SightCard {
+  SightCardToVizit({Sight sight}) : super(sight: sight);
+}
+
+/// Карточка места, где уже был
+class SightCardVizited extends SightCard {
+  SightCardVizited({Sight sight}) : super(sight: sight);
 }
