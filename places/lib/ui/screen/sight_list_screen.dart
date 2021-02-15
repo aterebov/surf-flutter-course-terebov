@@ -3,6 +3,7 @@ import 'package:places/mocks.dart';
 import 'package:places/ui/res/text_styles.dart';
 import 'package:places/ui/res/strings.dart';
 import 'package:places/ui/screen/sight_card.dart';
+import 'package:places/ui/screen/app_com.dart';
 
 class SightListScreen extends StatefulWidget {
   @override
@@ -26,6 +27,9 @@ class _SightListScreenState extends State<SightListScreen> {
           ),
         ),
       ),
+      bottomNavigationBar: AppBottomNavigationBar(
+        currentIndex: 0,
+      ),
     );
   }
 }
@@ -42,7 +46,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       title: Container(
         margin: EdgeInsets.only(top: 40, bottom: 16),
         child: Text(
-          appBarText,
+          listAppBarText,
           style: textBold32,
         ),
       ),

@@ -18,6 +18,8 @@ TextStyle _text = const TextStyle(
 //Medium
     textMedium = _text.copyWith(fontWeight: FontWeight.w500),
     textMedium16 = textMedium.copyWith(fontSize: 16.0, height: 20.0 / 16.0),
+    textMedium18 = textMedium.copyWith(fontSize: 18.0, height: 24.0 / 18.0),
+    textMedium18LuckyPoint = textMedium18.copyWith(color: textColorLuckyPoint),
 
 //Bold (w700)
     textBold = _text.copyWith(fontWeight: FontWeight.bold),
