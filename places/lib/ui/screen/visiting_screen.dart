@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:places/mocks.dart';
-import 'package:places/ui/res/colors.dart';
 import 'package:places/ui/res/strings.dart';
-import 'package:places/ui/res/text_styles.dart';
 import 'package:places/ui/screen/app_com.dart';
 import 'package:places/ui/screen/sight_card.dart';
 
@@ -18,7 +16,6 @@ class VisitingScreen extends StatelessWidget {
         appBar: AppBar(
           title: Text(
             favAppBarText,
-            style: textMedium18LuckyPoint,
           ),
           centerTitle: true,
           backgroundColor: Colors.transparent,
@@ -32,17 +29,9 @@ class VisitingScreen extends StatelessWidget {
               margin: EdgeInsets.symmetric(vertical: 6, horizontal: 16),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(40),
-                color: tabbarColorBackground,
+                color: Theme.of(context).cardColor,
               ),
               child: TabBar(
-                indicator: BoxDecoration(
-                  borderRadius: BorderRadius.circular(40),
-                  color: tabbarColorIndicator,
-                ),
-                labelColor: textColorWhite,
-                labelStyle: textBold14,
-                unselectedLabelColor: textColorSlateGrey,
-                unselectedLabelStyle: textBold14,
                 tabs: [
                   Tab(
                     text: favToVizitText,

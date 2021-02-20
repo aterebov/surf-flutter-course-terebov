@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:places/mocks.dart';
+import 'package:places/ui/screen/res/themes.dart';
 import 'package:places/ui/screen/sight_detail.dart';
 import 'package:places/ui/screen/sight_list_screen.dart';
 import 'package:places/ui/screen/visiting_screen.dart';
@@ -9,12 +10,16 @@ void main() {
 }
 
 class App extends StatelessWidget {
+  bool isDarkMode = true;
+  // bool isDarkMode = false;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'App title',
+      theme: isDarkMode ? darkTheme : lightTheme,
       home:
-          VisitingScreen(), // SightDetail(sight: mocks[1]), // SightListScreen(),
+          VisitingScreen(), // SightDetail(sight: mocks[2]), // SightListScreen(),
     );
   }
 }

@@ -14,6 +14,7 @@ class AppBottomNavigationBar extends StatelessWidget {
       type: BottomNavigationBarType.fixed,
       showSelectedLabels: false,
       showUnselectedLabels: false,
+      backgroundColor: Theme.of(context).backgroundColor,
       items: [
         BottomNavigationBarItem(
           icon: Icon(Icons.format_list_bulleted),
