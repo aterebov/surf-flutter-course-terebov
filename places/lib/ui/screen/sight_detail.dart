@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:places/domain/sight.dart';
-import 'package:places/ui/res/colors.dart';
-import 'package:places/ui/res/text_styles.dart';
+import 'package:places/ui/screen/res/themes.dart';
 
+/// Детализация места
 class SightDetail extends StatelessWidget {
   final Sight sight;
 
@@ -10,108 +10,125 @@ class SightDetail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SingleChildScrollView(
-        child: Container(
-          color: Colors.white,
-          child: Column(
-            children: [
-              Stack(
-                children: [
-                  Container(
-                    height: 360,
-                    width: double.infinity,
-                    child: Image.network(
-                      sight.url,
-                      fit: BoxFit.cover,
-                      loadingBuilder: (BuildContext context, Widget child,
-                          ImageChunkEvent loadingProgress) {
-                        if (loadingProgress == null) return child;
-                        return Center(
-                          child: CircularProgressIndicator(
-                            value: loadingProgress.expectedTotalBytes != null
-                                ? loadingProgress.cumulativeBytesLoaded /
-                                    loadingProgress.expectedTotalBytes
-                                : null,
-                          ),
-                        );
-                      },
-                    ),
-                  ),
-                  Positioned(
-                    left: 16,
-                    top: 36,
-                    child: Container(
-                      width: 32,
-                      height: 32,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10.0),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              SizedBox(height: 24),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+    return Theme(
+      data: (Theme.of(context).brightness == Brightness.dark)
+          ? darkSightDetailTheme
+          : lightSightDetailTheme,
+      child: Builder(
+        builder: (BuildContext context) {
+          return Scaffold(
+            body: SingleChildScrollView(
+              child: Container(
+                color: Theme.of(context).backgroundColor,
                 child: Column(
                   children: [
-                    Container(
+                    Stack(
+                      children: [
+                        Container(
+                          height: 360,
+                          width: double.infinity,
+                          child: Image.network(
+                            sight.url,
+                            fit: BoxFit.cover,
+                            loadingBuilder: (BuildContext context, Widget child,
+                                ImageChunkEvent loadingProgress) {
+                              if (loadingProgress == null) return child;
+                              return Center(
+                                child: CircularProgressIndicator(
+                                  value: loadingProgress.expectedTotalBytes !=
+                                          null
+                                      ? loadingProgress.cumulativeBytesLoaded /
+                                          loadingProgress.expectedTotalBytes
+                                      : null,
+                                ),
+                              );
+                            },
+                          ),
+                        ),
+                        Positioned(
+                          left: 16,
+                          top: 36,
+                          child: Container(
+                            width: 32,
+                            height: 32,
+                            decoration: BoxDecoration(
+                              color: Theme.of(context).backgroundColor,
+                              borderRadius: BorderRadius.circular(10.0),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 24),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 16.0),
                       child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
-                            sight.name,
-                            style: textBold24,
+                          Container(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  sight.name,
+                                  style: Theme.of(context)
+                                      .primaryTextTheme
+                                      .bodyText1,
+                                ),
+                                Container(
+                                  height: 2,
+                                ),
+                                Row(
+                                  children: [
+                                    Text(
+                                      sight.type,
+                                      style: Theme.of(context)
+                                          .primaryTextTheme
+                                          .subtitle2, // textBold14BlueZodiac,
+                                    ),
+                                    Container(width: 16),
+                                    // Заглушка - пока непонятно как получать эти данные - может дальше будет в курсе
+                                    // временно - поэтому не унесено в текстовые константы
+                                    Text(
+                                      "Закрыто до 9:00",
+                                      style: Theme.of(context)
+                                          .primaryTextTheme
+                                          .subtitle1,
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
                           ),
                           Container(
-                            height: 2,
+                            margin: const EdgeInsets.only(top: 24.0),
+                            child: Text(
+                              sight.detail,
+                              style:
+                                  Theme.of(context).primaryTextTheme.bodyText2,
+                            ),
                           ),
-                          Row(
-                            children: [
-                              Text(
-                                sight.type,
-                                style: textBold14,
-                              ),
-                              Container(width: 16),
-                              // Заглушка - пока непонятно как получать эти данные - может дальше будет в курсе
-                              // временно - поэтому не унесено в текстовые константы
-                              Text(
-                                "Закрыто до 9:00",
-                                style: textRegular14SlateGrey,
-                              ),
-                            ],
+                          Container(
+                            margin: const EdgeInsets.only(top: 24.0),
+                            child: TempButtonBuildRoute(),
                           ),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      margin: const EdgeInsets.only(top: 24.0),
-                      child: Text(
-                        sight.detail,
-                        style: textRegular14,
-                      ),
-                    ),
-                    Container(
-                      margin: const EdgeInsets.only(top: 24.0),
-                      child: TempButtonBuildRoute(),
-                    ),
-                    Container(
-                      height: 1,
-                      margin: const EdgeInsets.only(top: 24.0),
-                      color: dividerColor,
-                    ),
-                    Container(
-                      height: 48,
-                      margin: const EdgeInsets.only(top: 8.0),
-                      child: Row(
-                        children: [
-                          Expanded(
-                            child: TempButtonPlan(),
+                          Container(
+                            height: 1,
+                            margin: const EdgeInsets.only(top: 24.0),
+                            color: Theme.of(context).dividerColor,
                           ),
-                          Expanded(
-                            child: TempButtonAddFavorites(),
+                          Container(
+                            height: 48,
+                            margin: const EdgeInsets.only(top: 8.0),
+                            child: Row(
+                              children: [
+                                Expanded(
+                                  child: TempButtonPlan(),
+                                ),
+                                Expanded(
+                                  child: TempButtonAddFavorites(),
+                                ),
+                              ],
+                            ),
                           ),
                         ],
                       ),
@@ -119,9 +136,9 @@ class SightDetail extends StatelessWidget {
                   ],
                 ),
               ),
-            ],
-          ),
-        ),
+            ),
+          );
+        },
       ),
     );
   }
@@ -187,7 +204,7 @@ class TempButtonPlan extends StatelessWidget {
             height: 24,
             decoration: BoxDecoration(
               border: Border.all(
-                color: Color(0xFF7C7E92),
+                color: Theme.of(context).dividerColor,
                 width: 2,
               ),
             ),
@@ -195,9 +212,9 @@ class TempButtonPlan extends StatelessWidget {
           Container(width: 10),
           Text(
             "Запланировать",
-            style: const TextStyle(
+            style: TextStyle(
               fontStyle: FontStyle.normal,
-              color: Color(0xFF7C7E92),
+              color: Theme.of(context).dividerColor,
               fontWeight: FontWeight.w700,
               fontSize: 14,
               height: 18.0 / 14.0,
@@ -226,7 +243,7 @@ class TempButtonAddFavorites extends StatelessWidget {
             height: 24,
             decoration: BoxDecoration(
               border: Border.all(
-                color: Color(0xFF3B3E5C),
+                color: Theme.of(context).buttonColor,
                 width: 2,
               ),
             ),
@@ -234,9 +251,9 @@ class TempButtonAddFavorites extends StatelessWidget {
           Container(width: 10),
           Text(
             "В избранное",
-            style: const TextStyle(
+            style: TextStyle(
               fontStyle: FontStyle.normal,
-              color: Color(0xFF3B3E5C),
+              color: Theme.of(context).buttonColor,
               fontWeight: FontWeight.w700,
               fontSize: 14,
               height: 18.0 / 14.0,
