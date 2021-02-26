@@ -10,8 +10,8 @@ void main() {
 }
 
 class App extends StatelessWidget {
-  bool isDarkMode = true;
-  // bool isDarkMode = false;
+  // bool isDarkMode = true;
+  bool isDarkMode = false;
 
   @override
   Widget build(BuildContext context) {

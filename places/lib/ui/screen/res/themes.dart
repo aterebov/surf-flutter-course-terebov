@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:places/ui/res/colors.dart';
 import 'package:places/ui/res/text_styles.dart';
 
-/// Методика использование тем в приложении.
+/// Методика использования тем в приложении.
 ///
 /// Основная тема приложения устанавливается для виджета [MaterialApp].
 /// Параметр [brightness] основной темы является ключевым и позволяет
