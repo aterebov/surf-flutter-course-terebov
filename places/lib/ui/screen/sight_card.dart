@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:places/domain/sight.dart';
+import 'package:places/ui/screen/app_com.dart';
 import 'package:places/ui/screen/res/themes.dart';
 
-/// Карточка места
+/// Карточка места базовая без кнопок
 class SightCard extends StatelessWidget {
   final Sight sight;
 
@@ -59,15 +60,6 @@ class SightCard extends StatelessWidget {
                                     .subtitle2,
                               ),
                             ),
-                            Positioned(
-                              right: 18,
-                              top: 19,
-                              child: Container(
-                                width: 20,
-                                height: 18,
-                                color: Colors.white,
-                              ),
-                            ),
                           ],
                         ),
                       ),
@@ -111,12 +103,148 @@ class SightCard extends StatelessWidget {
   }
 }
 
+/// TextButton с иконкой из svg-файла для карточки места
+class SightCardButton extends StatelessWidget {
+  SightCardButton({
+    Key key,
+    @required this.onPressed,
+    @required this.iconSvgAssetName,
+  }) : super(key: key);
+
+  final VoidCallback onPressed;
+  final String iconSvgAssetName;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 24,
+      height: 24,
+      child: TextButton(
+        onPressed: onPressed,
+        child: SvgIcon(iconSvgAssetName: iconSvgAssetName),
+      ),
+    );
+  }
+}
+
+/// Карточка места для списка интересных мест
+class SightCardList extends StatelessWidget {
+  final Sight sight;
+  const SightCardList({Key key, this.sight}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Theme(
+      data: (Theme.of(context).brightness == Brightness.dark)
+          ? darkSightCardTheme
+          : lightSightCardTheme,
+      child: Builder(
+        builder: (BuildContext context) {
+          return Stack(
+            children: [
+              SightCard(sight: sight),
+              Positioned(
+                right: 16,
+                top: 16,
+                child: SightCardButton(
+                  onPressed: () {
+                    print("Favorite button pressed");
+                  },
+                  iconSvgAssetName: "res/image/heart.svg",
+                ),
+              ),
+            ],
+          );
+        },
+      ),
+    );
+  }
+}
+
 /// Карточка места, которое планируется посетить
-class SightCardToVizit extends SightCard {
-  SightCardToVizit({Sight sight}) : super(sight: sight);
+class SightCardToVizit extends StatelessWidget {
+  final Sight sight;
+  const SightCardToVizit({Key key, this.sight}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Theme(
+      data: (Theme.of(context).brightness == Brightness.dark)
+          ? darkSightCardTheme
+          : lightSightCardTheme,
+      child: Builder(
+        builder: (BuildContext context) {
+          return Stack(
+            children: [
+              SightCard(sight: sight),
+              Positioned(
+                right: 56,
+                top: 16,
+                child: SightCardButton(
+                  onPressed: () {
+                    print("Calendar button pressed");
+                  },
+                  iconSvgAssetName: "res/image/calendar.svg",
+                ),
+              ),
+              Positioned(
+                right: 16,
+                top: 16,
+                child: SightCardButton(
+                  onPressed: () {
+                    print("Close button pressed");
+                  },
+                  iconSvgAssetName: "res/image/close.svg",
+                ),
+              ),
+            ],
+          );
+        },
+      ),
+    );
+  }
 }
 
 /// Карточка места, где уже был
-class SightCardVizited extends SightCard {
-  SightCardVizited({Sight sight}) : super(sight: sight);
+class SightCardVizited extends StatelessWidget {
+  final Sight sight;
+  const SightCardVizited({Key key, this.sight}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Theme(
+      data: (Theme.of(context).brightness == Brightness.dark)
+          ? darkSightCardTheme
+          : lightSightCardTheme,
+      child: Builder(
+        builder: (BuildContext context) {
+          return Stack(
+            children: [
+              SightCard(sight: sight),
+              Positioned(
+                right: 56,
+                top: 16,
+                child: SightCardButton(
+                  onPressed: () {
+                    print("Share button pressed");
+                  },
+                  iconSvgAssetName: "res/image/share.svg",
+                ),
+              ),
+              Positioned(
+                right: 16,
+                top: 16,
+                child: SightCardButton(
+                  onPressed: () {
+                    print("Close button pressed");
+                  },
+                  iconSvgAssetName: "res/image/close.svg",
+                ),
+              ),
+            ],
+          );
+        },
+      ),
+    );
+  }
 }

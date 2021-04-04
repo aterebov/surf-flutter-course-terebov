@@ -64,6 +64,12 @@ final ThemeData lightSightCardTheme = ThemeData(
     bodyText1: textMedium16BlueZodiac,
     bodyText2: textRegular14SlateGrey,
   ),
+  textButtonTheme: TextButtonThemeData(
+    style: TextButton.styleFrom(
+      primary: lightSightCardButtonColor,
+      padding: EdgeInsets.all(0),
+    ),
+  ),
 );
 
 /// Карточка места - темная тема
@@ -74,18 +80,41 @@ final ThemeData darkSightCardTheme = ThemeData(
     bodyText1: textMedium16White,
     bodyText2: textRegular14SlateGrey,
   ),
+  textButtonTheme: TextButtonThemeData(
+    style: TextButton.styleFrom(
+      primary: darkSightCardButtonColor,
+      padding: EdgeInsets.all(0),
+    ),
+  ),
 );
 
 /// Детализация места - светлая тема
 final ThemeData lightSightDetailTheme = ThemeData(
   backgroundColor: lightBackgroundColor,
   dividerColor: lightSightDetailDividerColor,
-  buttonColor: lightSightDetailButtonColor,
+  buttonColor: lightSightDetailArrowButtonColor,
   primaryTextTheme: TextTheme(
     bodyText1: textBold24BlueZodiac,
     bodyText2: textRegular14BlueZodiac,
     subtitle1: textRegular14SlateGrey,
     subtitle2: textBold14BlueZodiac,
+  ),
+  elevatedButtonTheme: ElevatedButtonThemeData(
+    style: ElevatedButton.styleFrom(
+      primary: lightSightDetailElevatedButtonColor,
+      minimumSize: Size(double.infinity, 48),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12.0),
+      ),
+      textStyle: textBold14,
+    ),
+  ),
+  textButtonTheme: TextButtonThemeData(
+    style: TextButton.styleFrom(
+      primary: lightSightDetailTextButtonColor,
+      onSurface: lightSightDetailTextButtonDisableColor,
+      textStyle: textBold14,
+    ),
   ),
 );
 
@@ -93,11 +122,31 @@ final ThemeData lightSightDetailTheme = ThemeData(
 final ThemeData darkSightDetailTheme = ThemeData(
   backgroundColor: darkBackgroundColor,
   dividerColor: darkSightDetailDividerColor,
-  buttonColor: darkSightDetailButtonColor,
+  buttonColor: darkSightDetailArrowButtonColor,
   primaryTextTheme: TextTheme(
     bodyText1: textBold24White,
     bodyText2: textRegular14White,
     subtitle1: textRegular14SlateGrey,
     subtitle2: textBold14SlateGrey,
+  ),
+  elevatedButtonTheme: ElevatedButtonThemeData(
+    style: ElevatedButton.styleFrom(
+      primary: darkSightDetailElevatedButtonColor,
+      minimumSize: Size(double.infinity, 48),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12.0),
+      ),
+      textStyle: textBold14,
+    ),
+  ),
+  textButtonTheme: TextButtonThemeData(
+    style: TextButton.styleFrom(
+      primary: darkSightDetailElevatedButtonColor,
+      minimumSize: Size(double.infinity, 48),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12.0),
+      ),
+      textStyle: textBold14,
+    ),
   ),
 );

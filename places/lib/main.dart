@@ -18,8 +18,9 @@ class App extends StatelessWidget {
     return MaterialApp(
       title: 'App title',
       theme: isDarkMode ? darkTheme : lightTheme,
-      home:
-          VisitingScreen(), // SightDetail(sight: mocks[2]), // SightListScreen(),
+      // home: VisitingScreen(),
+      // home: SightDetail(sight: mocks[2]),
+      home: SightListScreen(),
     );
   }
 }
