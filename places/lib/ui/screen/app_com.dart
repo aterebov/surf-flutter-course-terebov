@@ -67,8 +67,8 @@ class SvgElevatedButton extends StatelessWidget {
   SvgElevatedButton({
     Key key,
     @required this.onPressed,
-    @required this.iconSvgAssetName,
-    @required this.label,
+    this.iconSvgAssetName,
+    this.label,
   }) : super(key: key);
 
   final VoidCallback onPressed;
@@ -77,15 +77,26 @@ class SvgElevatedButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List<Widget> _widgets = [];
+
+    if (iconSvgAssetName != null) {
+      _widgets.add(SvgIcon(iconSvgAssetName: iconSvgAssetName));
+    }
+    if (label != null) {
+      if (_widgets.length > 0) {
+        _widgets.add(SizedBox(width: 10));
+      }
+      _widgets.add(Text(label));
+    }
+    if (_widgets.length == 0) {
+      _widgets.add(Text(""));
+    }
+
     return ElevatedButton(
       onPressed: onPressed,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          SvgIcon(iconSvgAssetName: iconSvgAssetName),
-          SizedBox(width: 10),
-          Text(label),
-        ],
+        children: _widgets,
       ),
     );
   }

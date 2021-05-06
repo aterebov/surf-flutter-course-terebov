@@ -54,7 +54,7 @@ class SightCard extends StatelessWidget {
                               left: 16,
                               top: 16,
                               child: Text(
-                                sight.type,
+                                sight.type.name,
                                 style: Theme.of(context)
                                     .primaryTextTheme
                                     .subtitle2,

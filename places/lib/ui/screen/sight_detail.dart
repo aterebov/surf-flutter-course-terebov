@@ -90,7 +90,7 @@ class SightDetail extends StatelessWidget {
                                 Row(
                                   children: [
                                     Text(
-                                      sight.type,
+                                      sight.type.name,
                                       style: Theme.of(context)
                                           .primaryTextTheme
                                           .subtitle2,

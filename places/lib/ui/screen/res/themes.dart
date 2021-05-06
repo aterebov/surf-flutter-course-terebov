@@ -150,3 +150,87 @@ final ThemeData darkSightDetailTheme = ThemeData(
     ),
   ),
 );
+
+/// Экран поиска - светлая тема
+final ThemeData lightFiltersScreenTheme = ThemeData(
+  brightness: Brightness.light,
+  backgroundColor: lightBackgroundColor,
+  scaffoldBackgroundColor: lightBackgroundColor,
+  buttonColor: lightFiltersButtonColor,
+  cardColor: lightFiltersTypeSwithOffColor,
+  dividerColor: lightFiltersTypeSwithOnColor,
+  primaryTextTheme: TextTheme(
+    subtitle1: textRegular16LuckyPoint,
+    subtitle2: textRegular12BlueZodiac,
+  ),
+  sliderTheme: SliderThemeData(
+    trackHeight: 2,
+    activeTrackColor: lightFiltersSliderActiveTrackColor,
+    inactiveTrackColor: lightFiltersSliderInactiveTrackColor,
+    thumbColor: lightFiltersSliderThumbColor,
+    rangeThumbShape: RoundRangeSliderThumbShape(
+      enabledThumbRadius: 8,
+      elevation: 4,
+    ),
+    overlayShape: RoundSliderOverlayShape(overlayRadius: 8),
+  ),
+  elevatedButtonTheme: ElevatedButtonThemeData(
+    style: ElevatedButton.styleFrom(
+      primary: lightFiltersElevatedButtonColor,
+      minimumSize: Size(double.infinity, 48),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12.0),
+      ),
+      textStyle: textBold14,
+    ),
+  ),
+  textButtonTheme: TextButtonThemeData(
+    style: TextButton.styleFrom(
+      primary: lightFiltersTextButtonColor,
+      padding: EdgeInsets.all(0),
+      textStyle: textMedium16,
+    ),
+  ),
+);
+
+/// Экран поиска - темная тема
+final ThemeData darkFiltersScreenTheme = ThemeData(
+  brightness: Brightness.dark,
+  backgroundColor: darkBackgroundColor,
+  scaffoldBackgroundColor: darkBackgroundColor,
+  buttonColor: darkFiltersButtonColor,
+  cardColor: darkFiltersTypeSwithOffColor,
+  dividerColor: darkFiltersTypeSwithOnColor,
+  primaryTextTheme: TextTheme(
+    subtitle1: textRegular16White,
+    subtitle2: textRegular12White,
+  ),
+  sliderTheme: SliderThemeData(
+    trackHeight: 2,
+    activeTrackColor: darkFiltersSliderActiveTrackColor,
+    inactiveTrackColor: darkFiltersSliderInactiveTrackColor,
+    thumbColor: darkFiltersSliderThumbColor,
+    rangeThumbShape: RoundRangeSliderThumbShape(
+      enabledThumbRadius: 8,
+      elevation: 4,
+    ),
+    overlayShape: RoundSliderOverlayShape(overlayRadius: 8),
+  ),
+  elevatedButtonTheme: ElevatedButtonThemeData(
+    style: ElevatedButton.styleFrom(
+      primary: darkFiltersElevatedButtonColor,
+      minimumSize: Size(double.infinity, 48),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12.0),
+      ),
+      textStyle: textBold14,
+    ),
+  ),
+  textButtonTheme: TextButtonThemeData(
+    style: TextButton.styleFrom(
+      primary: darkFiltersTextButtonColor,
+      padding: EdgeInsets.all(0),
+      textStyle: textMedium16,
+    ),
+  ),
+);

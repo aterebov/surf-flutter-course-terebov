@@ -11,11 +11,22 @@ TextStyle _text = const TextStyle(
 
 //Regular (w400)
     textRegular = _text.copyWith(fontWeight: FontWeight.normal),
+    textRegular12 = textRegular.copyWith(fontSize: 12.0, height: 16.0 / 12.0),
+    textRegular12BlueZodiac =
+        textRegular12.copyWith(color: textColorBlueZodiac),
+    textRegular12White = textRegular12.copyWith(color: textColorWhite),
+    textRegular12SlateGrey56 =
+        textRegular12.copyWith(color: textColorSlateGrey.withOpacity(0.56)),
     textRegular14 = textRegular.copyWith(fontSize: 14.0, height: 18.0 / 14.0),
     textRegular14BlueZodiac =
         textRegular14.copyWith(color: textColorBlueZodiac),
     textRegular14White = textRegular14.copyWith(color: textColorWhite),
     textRegular14SlateGrey = textRegular14.copyWith(color: textColorSlateGrey),
+    textRegular16 = textRegular.copyWith(fontSize: 16.0, height: 20.0 / 16.0),
+    textRegular16LuckyPoint =
+        textRegular16.copyWith(color: textColorLuckyPoint),
+    textRegular16White = textRegular16.copyWith(color: textColorWhite),
+    textRegular16SlateGrey = textRegular16.copyWith(color: textColorSlateGrey),
 
 //Medium
     textMedium = _text.copyWith(fontWeight: FontWeight.w500),
