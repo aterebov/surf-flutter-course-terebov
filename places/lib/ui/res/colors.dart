@@ -39,7 +39,8 @@ const Color lightBackgroundColor = _white,
     lightFiltersSliderInactiveTrackColor = _slateGrey,
     lightFiltersSliderThumbColor = _white,
     lightFiltersElevatedButtonColor = _fruitSalad,
-    lightFiltersTextButtonColor = _fruitSalad;
+    lightFiltersTextButtonColor = _fruitSalad,
+    lightSettingsButtonColor = _fruitSalad;
 
 // Темная схема
 const Color darkBackgroundColor = _blackRussian,
@@ -60,4 +61,5 @@ const Color darkBackgroundColor = _blackRussian,
     darkFiltersSliderInactiveTrackColor = _slateGrey,
     darkFiltersSliderThumbColor = _white,
     darkFiltersElevatedButtonColor = _fruitSalad,
-    darkFiltersTextButtonColor = _fruitSalad;
+    darkFiltersTextButtonColor = _fruitSalad,
+    darkSettingsButtonColor = _fruitSalad;

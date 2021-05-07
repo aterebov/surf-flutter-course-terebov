@@ -2,28 +2,50 @@ import 'package:flutter/material.dart';
 import 'package:places/mocks.dart';
 import 'package:places/ui/screen/filters_screen.dart';
 import 'package:places/ui/screen/res/themes.dart';
+import 'package:places/ui/screen/settings_screen.dart';
 import 'package:places/ui/screen/sight_detail.dart';
 import 'package:places/ui/screen/sight_list_screen.dart';
 import 'package:places/ui/screen/visiting_screen.dart';
+
+// Настройки приложения
+AppSettings appSettings = new AppSettings();
 
 void main() {
   runApp(App());
 }
 
-class App extends StatelessWidget {
-  // bool isDarkMode = true;
-  bool isDarkMode = false;
+class App extends StatefulWidget {
+  @override
+  _AppState createState() => _AppState();
+}
 
+class _AppState extends State<App> {
   @override
   Widget build(BuildContext context) {
+    // Обработка изменения настроек (изменение темы)
+    appSettings.addListener(() {
+      setState(() {});
+    });
+
     return MaterialApp(
       title: 'App title',
-      theme: isDarkMode ? darkTheme : lightTheme,
+      theme: appSettings.isDarkTheme ? darkTheme : lightTheme,
       // home: VisitingScreen(),
       // home: SightDetail(sight: mocks[2]),
       // home: SightListScreen(),
-      home: FiltersScreen(),
+      // home: FiltersScreen(),
+      home: SettingsScreen(),
     );
+  }
+}
+
+/// Настройки приложения - хранение, установка, извещение при изменении
+class AppSettings extends ChangeNotifier {
+  bool isDarkTheme = false;
+
+  void setDarkTheme(bool isDarkTheme) {
+    this.isDarkTheme = isDarkTheme;
+    notifyListeners();
   }
 }
 

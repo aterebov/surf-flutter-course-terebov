@@ -234,3 +234,35 @@ final ThemeData darkFiltersScreenTheme = ThemeData(
     ),
   ),
 );
+
+/// Экран Настройки - светлая тема
+final ThemeData lightSettingsScreenTheme = ThemeData(
+  brightness: Brightness.light,
+  backgroundColor: lightBackgroundColor,
+  scaffoldBackgroundColor: lightBackgroundColor,
+  buttonColor: lightSettingsButtonColor,
+  primaryTextTheme: TextTheme(
+    headline6: textMedium18LuckyPoint, // Заголовок в AppBar
+    subtitle1: textRegular16LuckyPoint,
+  ),
+  dividerTheme: DividerThemeData(
+    space: 1,
+    thickness: 1,
+  ),
+);
+
+/// Экран Настройки - темная тема
+final ThemeData darkSettingsScreenTheme = ThemeData(
+  brightness: Brightness.dark,
+  backgroundColor: darkBackgroundColor,
+  scaffoldBackgroundColor: darkBackgroundColor,
+  buttonColor: darkSettingsButtonColor,
+  primaryTextTheme: TextTheme(
+    headline6: textMedium18White, // Заголовок в AppBar
+    subtitle1: textRegular16White,
+  ),
+  dividerTheme: DividerThemeData(
+    space: 1,
+    thickness: 1,
+  ),
+);
