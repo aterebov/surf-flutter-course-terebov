@@ -17,3 +17,8 @@ const String filtersButtonClearText = 'Очистить';
 const String filtersTypeSightGroupTitleText = 'КАТЕГОРИИ';
 const String filtersRangeTitleText = 'Расстояние';
 const String filtersButtonShowText = 'ПОКАЗАТЬ';
+
+// Экран Настройки
+const String settingsAppBarText = 'Настройки';
+const String settingsDarkThemeText = 'Темная тема';
+const String settingsViewHelpText = 'Смотреть туториал';
