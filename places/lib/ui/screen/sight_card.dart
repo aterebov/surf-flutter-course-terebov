@@ -21,79 +21,95 @@ class SightCard extends StatelessWidget {
             aspectRatio: 3.0 / 2.0,
             child: ClipRRect(
               borderRadius: BorderRadius.circular(16.0),
-              child: Container(
-                color: Theme.of(context).backgroundColor,
-                child: Column(
-                  children: [
-                    Expanded(
-                      flex: 96,
-                      child: Container(
-                        child: Stack(
-                          children: [
-                            Image.network(
-                              sight.url,
-                              width: double.infinity,
-                              fit: BoxFit.cover,
-                              loadingBuilder: (BuildContext context,
-                                  Widget child,
-                                  ImageChunkEvent loadingProgress) {
-                                if (loadingProgress == null) return child;
-                                return Center(
-                                  child: CircularProgressIndicator(
-                                    value: loadingProgress.expectedTotalBytes !=
-                                            null
-                                        ? loadingProgress
-                                                .cumulativeBytesLoaded /
-                                            loadingProgress.expectedTotalBytes
-                                        : null,
+              child: Stack(
+                children: [
+                  Container(
+                    color: Theme.of(context).backgroundColor,
+                    child: Column(
+                      children: [
+                        Expanded(
+                          flex: 96,
+                          child: Container(
+                            child: Stack(
+                              children: [
+                                Image.network(
+                                  sight.url,
+                                  width: double.infinity,
+                                  fit: BoxFit.cover,
+                                  loadingBuilder: (BuildContext context,
+                                      Widget child,
+                                      ImageChunkEvent loadingProgress) {
+                                    if (loadingProgress == null) return child;
+                                    return Center(
+                                      child: CircularProgressIndicator(
+                                        value: loadingProgress
+                                                    .expectedTotalBytes !=
+                                                null
+                                            ? loadingProgress
+                                                    .cumulativeBytesLoaded /
+                                                loadingProgress
+                                                    .expectedTotalBytes
+                                            : null,
+                                      ),
+                                    );
+                                  },
+                                ),
+                                Positioned(
+                                  left: 16,
+                                  top: 16,
+                                  child: Text(
+                                    sight.type.name,
+                                    style: Theme.of(context)
+                                        .primaryTextTheme
+                                        .subtitle2,
                                   ),
-                                );
-                              },
+                                ),
+                              ],
                             ),
-                            Positioned(
-                              left: 16,
-                              top: 16,
-                              child: Text(
-                                sight.type,
-                                style: Theme.of(context)
-                                    .primaryTextTheme
-                                    .subtitle2,
-                              ),
-                            ),
-                          ],
+                          ),
                         ),
-                      ),
+                        Expanded(
+                          flex: 92,
+                          child: Container(
+                            padding: EdgeInsets.all(16),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  sight.name,
+                                  style: Theme.of(context)
+                                      .primaryTextTheme
+                                      .bodyText1,
+                                  maxLines: 2,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                                SizedBox(
+                                  height: 2.0,
+                                ),
+                                Text(
+                                  sight.detail,
+                                  style: Theme.of(context)
+                                      .primaryTextTheme
+                                      .bodyText2,
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                              ],
+                            ),
+                          ),
+                        )
+                      ],
                     ),
-                    Expanded(
-                      flex: 92,
-                      child: Container(
-                        padding: EdgeInsets.all(16),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              sight.name,
-                              style:
-                                  Theme.of(context).primaryTextTheme.bodyText1,
-                              maxLines: 2,
-                              overflow: TextOverflow.ellipsis,
-                            ),
-                            SizedBox(
-                              height: 2.0,
-                            ),
-                            Text(
-                              sight.detail,
-                              style:
-                                  Theme.of(context).primaryTextTheme.bodyText2,
-                              maxLines: 1,
-                              overflow: TextOverflow.ellipsis,
-                            ),
-                          ],
-                        ),
-                      ),
-                    )
-                  ],
-                ),
+                  ),
+                  Material(
+                    type: MaterialType.transparency,
+                    child: InkWell(
+                      onTap: () {
+                        print('Tap sight card');
+                      },
+                    ),
+                  ),
+                ],
               ),
             ),
           );

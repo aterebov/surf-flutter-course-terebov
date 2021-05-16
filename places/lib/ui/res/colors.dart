@@ -8,8 +8,8 @@ const Color _slateGrey = Color(0xFF7C7E92),
     _luckyPoint = Color(0xFF252849),
     _blackRussian = Color(0xFF21222C),
     _blackDark = Color(0xFF1A1A20),
-    _fruitSalad = Color(0xFF4CAF50);
-
+    _fruitSalad = Color(0xFF4CAF50),
+    _pastelGreen = Color(0xFF6ADA6F);
 // Семантические алиасы
 // Пополняются по мере необходимости
 // Используют только основную палитру
@@ -31,7 +31,16 @@ const Color lightBackgroundColor = _white,
     lightSightDetailTextButtonDisableColor = _slateGrey,
     lightSightDetailArrowButtonColor = _blackRussian,
     lightSightCardBackgroundColor = _whiteSmoke,
-    lightSightCardButtonColor = _white;
+    lightSightCardButtonColor = _white,
+    lightFiltersButtonColor = _luckyPoint,
+    lightFiltersTypeSwithOffColor = _fruitSalad,
+    lightFiltersTypeSwithOnColor = _pastelGreen,
+    lightFiltersSliderActiveTrackColor = _fruitSalad,
+    lightFiltersSliderInactiveTrackColor = _slateGrey,
+    lightFiltersSliderThumbColor = _white,
+    lightFiltersElevatedButtonColor = _fruitSalad,
+    lightFiltersTextButtonColor = _fruitSalad,
+    lightSettingsButtonColor = _fruitSalad;
 
 // Темная схема
 const Color darkBackgroundColor = _blackRussian,
@@ -44,4 +53,13 @@ const Color darkBackgroundColor = _blackRussian,
     darkSightDetailTextButtonDisableColor = _slateGrey,
     darkSightDetailArrowButtonColor = _blackRussian,
     darkSightCardBackgroundColor = _blackDark,
-    darkSightCardButtonColor = _white;
+    darkSightCardButtonColor = _white,
+    darkFiltersButtonColor = _white,
+    darkFiltersTypeSwithOffColor = _fruitSalad,
+    darkFiltersTypeSwithOnColor = _pastelGreen,
+    darkFiltersSliderActiveTrackColor = _fruitSalad,
+    darkFiltersSliderInactiveTrackColor = _slateGrey,
+    darkFiltersSliderThumbColor = _white,
+    darkFiltersElevatedButtonColor = _fruitSalad,
+    darkFiltersTextButtonColor = _fruitSalad,
+    darkSettingsButtonColor = _fruitSalad;
