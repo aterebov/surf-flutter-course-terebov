@@ -64,6 +64,12 @@ final ThemeData lightSightCardTheme = ThemeData(
     bodyText1: textMedium16BlueZodiac,
     bodyText2: textRegular14SlateGrey,
   ),
+  textButtonTheme: TextButtonThemeData(
+    style: TextButton.styleFrom(
+      primary: lightSightCardButtonColor,
+      padding: EdgeInsets.all(0),
+    ),
+  ),
 );
 
 /// Карточка места - темная тема
@@ -74,18 +80,41 @@ final ThemeData darkSightCardTheme = ThemeData(
     bodyText1: textMedium16White,
     bodyText2: textRegular14SlateGrey,
   ),
+  textButtonTheme: TextButtonThemeData(
+    style: TextButton.styleFrom(
+      primary: darkSightCardButtonColor,
+      padding: EdgeInsets.all(0),
+    ),
+  ),
 );
 
 /// Детализация места - светлая тема
 final ThemeData lightSightDetailTheme = ThemeData(
   backgroundColor: lightBackgroundColor,
   dividerColor: lightSightDetailDividerColor,
-  buttonColor: lightSightDetailButtonColor,
+  buttonColor: lightSightDetailArrowButtonColor,
   primaryTextTheme: TextTheme(
     bodyText1: textBold24BlueZodiac,
     bodyText2: textRegular14BlueZodiac,
     subtitle1: textRegular14SlateGrey,
     subtitle2: textBold14BlueZodiac,
+  ),
+  elevatedButtonTheme: ElevatedButtonThemeData(
+    style: ElevatedButton.styleFrom(
+      primary: lightSightDetailElevatedButtonColor,
+      minimumSize: Size(double.infinity, 48),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12.0),
+      ),
+      textStyle: textBold14,
+    ),
+  ),
+  textButtonTheme: TextButtonThemeData(
+    style: TextButton.styleFrom(
+      primary: lightSightDetailTextButtonColor,
+      onSurface: lightSightDetailTextButtonDisableColor,
+      textStyle: textBold14,
+    ),
   ),
 );
 
@@ -93,11 +122,147 @@ final ThemeData lightSightDetailTheme = ThemeData(
 final ThemeData darkSightDetailTheme = ThemeData(
   backgroundColor: darkBackgroundColor,
   dividerColor: darkSightDetailDividerColor,
-  buttonColor: darkSightDetailButtonColor,
+  buttonColor: darkSightDetailArrowButtonColor,
   primaryTextTheme: TextTheme(
     bodyText1: textBold24White,
     bodyText2: textRegular14White,
     subtitle1: textRegular14SlateGrey,
     subtitle2: textBold14SlateGrey,
+  ),
+  elevatedButtonTheme: ElevatedButtonThemeData(
+    style: ElevatedButton.styleFrom(
+      primary: darkSightDetailElevatedButtonColor,
+      minimumSize: Size(double.infinity, 48),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12.0),
+      ),
+      textStyle: textBold14,
+    ),
+  ),
+  textButtonTheme: TextButtonThemeData(
+    style: TextButton.styleFrom(
+      primary: darkSightDetailElevatedButtonColor,
+      minimumSize: Size(double.infinity, 48),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12.0),
+      ),
+      textStyle: textBold14,
+    ),
+  ),
+);
+
+/// Экран поиска - светлая тема
+final ThemeData lightFiltersScreenTheme = ThemeData(
+  brightness: Brightness.light,
+  backgroundColor: lightBackgroundColor,
+  scaffoldBackgroundColor: lightBackgroundColor,
+  buttonColor: lightFiltersButtonColor,
+  cardColor: lightFiltersTypeSwithOffColor,
+  dividerColor: lightFiltersTypeSwithOnColor,
+  primaryTextTheme: TextTheme(
+    subtitle1: textRegular16LuckyPoint,
+    subtitle2: textRegular12BlueZodiac,
+  ),
+  sliderTheme: SliderThemeData(
+    trackHeight: 2,
+    activeTrackColor: lightFiltersSliderActiveTrackColor,
+    inactiveTrackColor: lightFiltersSliderInactiveTrackColor,
+    thumbColor: lightFiltersSliderThumbColor,
+    rangeThumbShape: RoundRangeSliderThumbShape(
+      enabledThumbRadius: 8,
+      elevation: 4,
+    ),
+    overlayShape: RoundSliderOverlayShape(overlayRadius: 8),
+  ),
+  elevatedButtonTheme: ElevatedButtonThemeData(
+    style: ElevatedButton.styleFrom(
+      primary: lightFiltersElevatedButtonColor,
+      minimumSize: Size(double.infinity, 48),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12.0),
+      ),
+      textStyle: textBold14,
+    ),
+  ),
+  textButtonTheme: TextButtonThemeData(
+    style: TextButton.styleFrom(
+      primary: lightFiltersTextButtonColor,
+      padding: EdgeInsets.all(0),
+      textStyle: textMedium16,
+    ),
+  ),
+);
+
+/// Экран поиска - темная тема
+final ThemeData darkFiltersScreenTheme = ThemeData(
+  brightness: Brightness.dark,
+  backgroundColor: darkBackgroundColor,
+  scaffoldBackgroundColor: darkBackgroundColor,
+  buttonColor: darkFiltersButtonColor,
+  cardColor: darkFiltersTypeSwithOffColor,
+  dividerColor: darkFiltersTypeSwithOnColor,
+  primaryTextTheme: TextTheme(
+    subtitle1: textRegular16White,
+    subtitle2: textRegular12White,
+  ),
+  sliderTheme: SliderThemeData(
+    trackHeight: 2,
+    activeTrackColor: darkFiltersSliderActiveTrackColor,
+    inactiveTrackColor: darkFiltersSliderInactiveTrackColor,
+    thumbColor: darkFiltersSliderThumbColor,
+    rangeThumbShape: RoundRangeSliderThumbShape(
+      enabledThumbRadius: 8,
+      elevation: 4,
+    ),
+    overlayShape: RoundSliderOverlayShape(overlayRadius: 8),
+  ),
+  elevatedButtonTheme: ElevatedButtonThemeData(
+    style: ElevatedButton.styleFrom(
+      primary: darkFiltersElevatedButtonColor,
+      minimumSize: Size(double.infinity, 48),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12.0),
+      ),
+      textStyle: textBold14,
+    ),
+  ),
+  textButtonTheme: TextButtonThemeData(
+    style: TextButton.styleFrom(
+      primary: darkFiltersTextButtonColor,
+      padding: EdgeInsets.all(0),
+      textStyle: textMedium16,
+    ),
+  ),
+);
+
+/// Экран Настройки - светлая тема
+final ThemeData lightSettingsScreenTheme = ThemeData(
+  brightness: Brightness.light,
+  backgroundColor: lightBackgroundColor,
+  scaffoldBackgroundColor: lightBackgroundColor,
+  buttonColor: lightSettingsButtonColor,
+  primaryTextTheme: TextTheme(
+    headline6: textMedium18LuckyPoint, // Заголовок в AppBar
+    subtitle1: textRegular16LuckyPoint,
+  ),
+  dividerTheme: DividerThemeData(
+    space: 1,
+    thickness: 1,
+  ),
+);
+
+/// Экран Настройки - темная тема
+final ThemeData darkSettingsScreenTheme = ThemeData(
+  brightness: Brightness.dark,
+  backgroundColor: darkBackgroundColor,
+  scaffoldBackgroundColor: darkBackgroundColor,
+  buttonColor: darkSettingsButtonColor,
+  primaryTextTheme: TextTheme(
+    headline6: textMedium18White, // Заголовок в AppBar
+    subtitle1: textRegular16White,
+  ),
+  dividerTheme: DividerThemeData(
+    space: 1,
+    thickness: 1,
   ),
 );

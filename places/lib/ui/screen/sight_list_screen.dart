@@ -22,7 +22,7 @@ class _SightListScreenState extends State<SightListScreen> {
             children: mocks
                 .map((e) => Padding(
                     padding: const EdgeInsets.only(bottom: 16.0),
-                    child: SightCard(sight: e)))
+                    child: SightCardList(sight: e)))
                 .toList(),
           ),
         ),

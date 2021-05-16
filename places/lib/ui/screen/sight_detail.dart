@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:places/domain/sight.dart';
+import 'package:places/ui/res/assets.dart';
+import 'package:places/ui/res/strings.dart';
+import 'package:places/ui/screen/app_com.dart';
 import 'package:places/ui/screen/res/themes.dart';
 
 /// Детализация места
@@ -51,9 +54,18 @@ class SightDetail extends StatelessWidget {
                           child: Container(
                             width: 32,
                             height: 32,
-                            decoration: BoxDecoration(
-                              color: Theme.of(context).backgroundColor,
-                              borderRadius: BorderRadius.circular(10.0),
+                            child: ElevatedButton(
+                              onPressed: () {
+                                print("Arrow button pressed");
+                              },
+                              style: ElevatedButton.styleFrom(
+                                primary: Theme.of(context).backgroundColor,
+                                onPrimary: Theme.of(context).buttonColor,
+                                padding: EdgeInsets.all(0),
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(10.0)),
+                              ),
+                              child: SvgIcon(iconSvgAssetName: icon_arrow),
                             ),
                           ),
                         ),
@@ -74,22 +86,18 @@ class SightDetail extends StatelessWidget {
                                       .primaryTextTheme
                                       .bodyText1,
                                 ),
-                                Container(
-                                  height: 2,
-                                ),
+                                SizedBox(height: 2),
                                 Row(
                                   children: [
                                     Text(
-                                      sight.type,
+                                      sight.type.name,
                                       style: Theme.of(context)
                                           .primaryTextTheme
-                                          .subtitle2, // textBold14BlueZodiac,
+                                          .subtitle2,
                                     ),
-                                    Container(width: 16),
-                                    // Заглушка - пока непонятно как получать эти данные - может дальше будет в курсе
-                                    // временно - поэтому не унесено в текстовые константы
+                                    SizedBox(width: 16),
                                     Text(
-                                      "Закрыто до 9:00",
+                                      detailButtonOpenTimeText,
                                       style: Theme.of(context)
                                           .primaryTextTheme
                                           .subtitle1,
@@ -109,7 +117,13 @@ class SightDetail extends StatelessWidget {
                           ),
                           Container(
                             margin: const EdgeInsets.only(top: 24.0),
-                            child: TempButtonBuildRoute(),
+                            child: SvgElevatedButton(
+                              onPressed: () {
+                                print("Go button pressed");
+                              },
+                              iconSvgAssetName: icon_go,
+                              label: detailButtonGoText,
+                            ),
                           ),
                           Container(
                             height: 1,
@@ -122,10 +136,23 @@ class SightDetail extends StatelessWidget {
                             child: Row(
                               children: [
                                 Expanded(
-                                  child: TempButtonPlan(),
+                                  child: SvgTextButton(
+                                    onPressed: null,
+                                    // onPressed: () {
+                                    //   print("Plan button pressed");
+                                    // },
+                                    iconSvgAssetName: icon_calendar,
+                                    label: detailButtonPlanText,
+                                  ),
                                 ),
                                 Expanded(
-                                  child: TempButtonAddFavorites(),
+                                  child: SvgTextButton(
+                                    onPressed: () {
+                                      print("Favorite button pressed");
+                                    },
+                                    iconSvgAssetName: icon_heart,
+                                    label: detailButtonAddFavoritesText,
+                                  ),
                                 ),
                               ],
                             ),
@@ -139,128 +166,6 @@ class SightDetail extends StatelessWidget {
             ),
           );
         },
-      ),
-    );
-  }
-}
-
-// Заглушка кнопки Построить маршрут
-// временно - поэтому текстовые строки и стили не вынесены в отдельные файлы
-class TempButtonBuildRoute extends StatelessWidget {
-  const TempButtonBuildRoute({Key key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 48,
-      decoration: BoxDecoration(
-        color: Color(0xFF4CAF50),
-        borderRadius: BorderRadius.circular(12.0),
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Container(
-            width: 24,
-            height: 24,
-            decoration: BoxDecoration(
-              border: Border.all(
-                color: Colors.white,
-                width: 2,
-              ),
-            ),
-          ),
-          Container(width: 10),
-          Text(
-            "ПОСТРОИТЬ МАРШРУТ",
-            style: const TextStyle(
-              fontStyle: FontStyle.normal,
-              color: Colors.white,
-              fontWeight: FontWeight.w700,
-              fontSize: 14,
-              height: 18.0 / 14.0,
-              decoration: TextDecoration.none,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-// Заглушка кнопки Запланировать
-// временно - поэтому текстовые строки и стили не вынесены в отдельные файлы
-class TempButtonPlan extends StatelessWidget {
-  const TempButtonPlan({Key key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Container(
-            width: 24,
-            height: 24,
-            decoration: BoxDecoration(
-              border: Border.all(
-                color: Theme.of(context).dividerColor,
-                width: 2,
-              ),
-            ),
-          ),
-          Container(width: 10),
-          Text(
-            "Запланировать",
-            style: TextStyle(
-              fontStyle: FontStyle.normal,
-              color: Theme.of(context).dividerColor,
-              fontWeight: FontWeight.w700,
-              fontSize: 14,
-              height: 18.0 / 14.0,
-              decoration: TextDecoration.none,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-// Заглушка кнопки В избранное
-// временно - поэтому текстовые строки и стили не вынесены в отдельные файлы
-class TempButtonAddFavorites extends StatelessWidget {
-  const TempButtonAddFavorites({Key key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Container(
-            width: 24,
-            height: 24,
-            decoration: BoxDecoration(
-              border: Border.all(
-                color: Theme.of(context).buttonColor,
-                width: 2,
-              ),
-            ),
-          ),
-          Container(width: 10),
-          Text(
-            "В избранное",
-            style: TextStyle(
-              fontStyle: FontStyle.normal,
-              color: Theme.of(context).buttonColor,
-              fontWeight: FontWeight.w700,
-              fontSize: 14,
-              height: 18.0 / 14.0,
-              decoration: TextDecoration.none,
-            ),
-          ),
-        ],
       ),
     );
   }

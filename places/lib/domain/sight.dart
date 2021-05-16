@@ -1,11 +1,13 @@
-// Sight - модель данных
+import 'package:places/domain/sight_type.dart';
+
+/// Sight - модель данных
 class Sight {
   final String name;
   final double lat; // Широта
   final double lon; // Долгота
   final String url;
   final String detail;
-  final String type; // Пока просто String
+  final SightType type;
 
   Sight({
     this.name,
