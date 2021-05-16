@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:places/domain/sight.dart';
+import 'package:places/ui/res/assets.dart';
 import 'package:places/ui/res/strings.dart';
 import 'package:places/ui/screen/app_com.dart';
 import 'package:places/ui/screen/res/themes.dart';
@@ -64,8 +65,7 @@ class SightDetail extends StatelessWidget {
                                 shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(10.0)),
                               ),
-                              child: SvgIcon(
-                                  iconSvgAssetName: "res/image/arrow.svg"),
+                              child: SvgIcon(iconSvgAssetName: icon_arrow),
                             ),
                           ),
                         ),
@@ -121,7 +121,7 @@ class SightDetail extends StatelessWidget {
                               onPressed: () {
                                 print("Go button pressed");
                               },
-                              iconSvgAssetName: "res/image/go.svg",
+                              iconSvgAssetName: icon_go,
                               label: detailButtonGoText,
                             ),
                           ),
@@ -141,7 +141,7 @@ class SightDetail extends StatelessWidget {
                                     // onPressed: () {
                                     //   print("Plan button pressed");
                                     // },
-                                    iconSvgAssetName: "res/image/calendar.svg",
+                                    iconSvgAssetName: icon_calendar,
                                     label: detailButtonPlanText,
                                   ),
                                 ),
@@ -150,7 +150,7 @@ class SightDetail extends StatelessWidget {
                                     onPressed: () {
                                       print("Favorite button pressed");
                                     },
-                                    iconSvgAssetName: "res/image/heart.svg",
+                                    iconSvgAssetName: icon_heart,
                                     label: detailButtonAddFavoritesText,
                                   ),
                                 ),

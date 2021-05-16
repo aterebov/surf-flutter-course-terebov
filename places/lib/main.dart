@@ -32,8 +32,8 @@ class _AppState extends State<App> {
       theme: appSettings.isDarkTheme ? darkTheme : lightTheme,
       // home: VisitingScreen(),
       // home: SightDetail(sight: mocks[2]),
-      // home: SightListScreen(),
-      home: FiltersScreen(),
+      home: SightListScreen(),
+      // home: FiltersScreen(),
       // home: SettingsScreen(),
     );
   }

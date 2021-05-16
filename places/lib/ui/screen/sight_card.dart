@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:places/domain/sight.dart';
+import 'package:places/ui/res/assets.dart';
 import 'package:places/ui/screen/app_com.dart';
 import 'package:places/ui/screen/res/themes.dart';
 
@@ -166,7 +167,7 @@ class SightCardList extends StatelessWidget {
                   onPressed: () {
                     print("Favorite button pressed");
                   },
-                  iconSvgAssetName: "res/image/heart.svg",
+                  iconSvgAssetName: icon_heart,
                 ),
               ),
             ],
@@ -200,7 +201,7 @@ class SightCardToVizit extends StatelessWidget {
                   onPressed: () {
                     print("Calendar button pressed");
                   },
-                  iconSvgAssetName: "res/image/calendar.svg",
+                  iconSvgAssetName: icon_calendar,
                 ),
               ),
               Positioned(
@@ -210,7 +211,7 @@ class SightCardToVizit extends StatelessWidget {
                   onPressed: () {
                     print("Close button pressed");
                   },
-                  iconSvgAssetName: "res/image/close.svg",
+                  iconSvgAssetName: icon_close,
                 ),
               ),
             ],
@@ -244,7 +245,7 @@ class SightCardVizited extends StatelessWidget {
                   onPressed: () {
                     print("Share button pressed");
                   },
-                  iconSvgAssetName: "res/image/share.svg",
+                  iconSvgAssetName: icon_share,
                 ),
               ),
               Positioned(
@@ -254,7 +255,7 @@ class SightCardVizited extends StatelessWidget {
                   onPressed: () {
                     print("Close button pressed");
                   },
-                  iconSvgAssetName: "res/image/close.svg",
+                  iconSvgAssetName: icon_close,
                 ),
               ),
             ],

@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:places/domain/sight.dart';
 import 'package:places/domain/sight_type.dart';
 import 'package:places/mocks.dart';
+import 'package:places/ui/res/assets.dart';
 import 'package:places/ui/res/strings.dart';
 import 'package:places/ui/res/text_styles.dart';
 import 'package:places/ui/screen/app_com.dart';
@@ -187,7 +188,7 @@ class FiltersScreenAppBar extends StatelessWidget
                   primary: Theme.of(context).buttonColor,
                   padding: EdgeInsets.all(0),
                 ),
-                child: SvgIcon(iconSvgAssetName: "res/image/arrow.svg"),
+                child: SvgIcon(iconSvgAssetName: icon_arrow),
               ),
             ),
           ),
@@ -317,8 +318,8 @@ class TypeSwitch extends StatelessWidget {
                     bottom: -4,
                     child: SvgPicture.asset(
                       (Theme.of(context).brightness == Brightness.dark)
-                          ? "res/image/tick_choice_dark.svg"
-                          : "res/image/tick_choice_light.svg",
+                          ? icon_tick_choice_dark
+                          : icon_tick_choice_light,
                     ),
                   )
               ],

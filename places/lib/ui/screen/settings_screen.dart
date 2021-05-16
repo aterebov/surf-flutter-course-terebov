@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:places/main.dart';
+import 'package:places/ui/res/assets.dart';
 import 'package:places/ui/res/strings.dart';
 import 'package:places/ui/screen/app_com.dart';
 import 'package:places/ui/screen/res/themes.dart';
@@ -115,7 +116,7 @@ class SettingScreenViewTutorialButton extends StatelessWidget {
                 primary: Theme.of(context).buttonColor,
                 padding: EdgeInsets.all(0),
               ),
-              child: SvgIcon(iconSvgAssetName: "res/image/info.svg"),
+              child: SvgIcon(iconSvgAssetName: icon_info),
             ),
           ),
         ],

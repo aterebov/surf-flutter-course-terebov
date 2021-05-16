@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:places/domain/sight.dart';
 import 'package:places/domain/sight_type.dart';
+import 'package:places/ui/res/assets.dart';
 
 // Заглушка с тестовыми данными мест
 final List mocks = [
@@ -51,10 +52,10 @@ final List mocks = [
 
 // Заглушка с тестовыми данными типов мест
 List mockSightTypeStorage = [
-  SightType(name: 'Отель', icon: 'res/image/hotel.svg'),
-  SightType(name: 'Ресторан', icon: 'res/image/restourant.svg'),
-  SightType(name: 'Особое место', icon: 'res/image/other.svg'),
-  SightType(name: 'Парк', icon: 'res/image/park.svg'),
-  SightType(name: 'Музей', icon: 'res/image/museum.svg'),
-  SightType(name: 'Кафе', icon: 'res/image/cafe.svg')
+  SightType(name: 'Отель', icon: icon_hotel),
+  SightType(name: 'Ресторан', icon: icon_restourant),
+  SightType(name: 'Особое место', icon: icon_other),
+  SightType(name: 'Парк', icon: icon_park),
+  SightType(name: 'Музей', icon: icon_museum),
+  SightType(name: 'Кафе', icon: icon_cafe)
 ];
